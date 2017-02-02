@@ -1,0 +1,26 @@
+{
+  "name": "nanogl-template",
+  "version": "1.0.0",
+  "description": "micro template compiler",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint index.js tests/**/*.js",
+    "test": "mocha tests/specs/*.js"
+  },
+  "author": "Pierre Lepers",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "through2": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chesles/combynify"
+  },
+  "keywords": [
+    "template",
+    "browserify",
+    "browserify-transform"
+  ],
+  "devDependencies": {
+  }
+}
