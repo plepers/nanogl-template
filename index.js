@@ -2,11 +2,16 @@ var path    = require( 'path' ),
     through = require( 'through2' ),
     compiler= require( './lib/compiler' );
 
-
+var MAGIC = '/*ngltpl*/'
 
 var processTemplate = function(templateSource, callback) 
-{
-  this.push( compiler( templateSource ) );
+{ 
+  var magicIndex = templateSource.indexOf( MAGIC );
+  if( magicIndex > -1 ) 
+    this.push( templateSource );
+  else
+    this.push( MAGIC+compiler( templateSource ) );
+
   callback.call(this);
 };
 
