@@ -21,7 +21,7 @@ function transform(file, settings)
 
   var fileExtension = path.extname(file);
 
-  if (settings.extensions === undefined || settings.extensions.indexOf(fileExtension) === -1 ) {
+  if ( settings !== undefined && ( settings.extensions === undefined || settings.extensions.indexOf(fileExtension) === -1 ) ) {
     // File does not match the specified file extension
     return through();
     
