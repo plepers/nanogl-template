@@ -1,6 +1,6 @@
 {
   "name": "nanogl-template",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "micro template compiler",
   "main": "index.js",
   "scripts": {
