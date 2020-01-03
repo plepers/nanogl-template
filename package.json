@@ -4,6 +4,7 @@
   "description": "micro template compiler",
   "main": "index.js",
   "scripts": {
+    "test": "node test/index.js"
   },
   "author": "Pierre Lepers",
   "license": "GPL-2.0",
@@ -19,6 +20,5 @@
     "browserify",
     "browserify-transform"
   ],
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
