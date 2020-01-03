@@ -3,20 +3,12 @@
   IN vec3 vIrradiance;
 #else
   uniform vec4 uSHCoeffs[7];
-  #include "./includes/spherical-harmonics.glsl"
-  #include './includes/spherical-harmonics2.glsl'  
-  #include <./includes/spherical-harmonics3.glsl>  
 
-    // XXXXXXX
-
-  {{ require( "./includes/spherical-harmonics.glsl" )() }}
+  #include "./include1.glsl.js"
 #endif
 
 
 {
-
-
-
   vec3 H = normalize( uLDirDirections[{{@index}}] + viewDir );
   float NoH = sdot( H,worldNormal );
   float sContib = specularMul * pow( NoH, roughness );

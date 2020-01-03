@@ -4,13 +4,13 @@ var path    = require( 'path' ),
 
 var MAGIC = '/*ngltpl*/'
 
-var processTemplate = function(templateSource, callback) 
+var processTemplate = function(templateSource, callback, settings) 
 { 
   var magicIndex = templateSource.indexOf( MAGIC );
   if( magicIndex > -1 ) 
     this.push( templateSource );
   else
-    this.push( MAGIC+compiler( templateSource ) );
+    this.push( MAGIC+compiler( templateSource, settings ) );
 
   callback.call(this);
 };
@@ -37,7 +37,7 @@ function transform(file, settings)
     try {
       processTemplate.call(this, chunks.join(''), function(template) {
         callback();
-      });
+      }, settings);
     } catch( err ) {
       // Annotate error with the file in which it originated
       err.message = err.message + ' in ' + file;
